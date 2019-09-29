@@ -4,7 +4,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/music', {
+mongoose.connect(`mongodb://${process.env.CHART_DB_ADDRESS}/music`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

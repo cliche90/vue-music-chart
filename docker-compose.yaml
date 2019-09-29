@@ -4,8 +4,8 @@ networks:
   music:
 
 services:
-  mongodb:
-    container_name: mongodb
+  chartdb:
+    container_name: chartdb
     image: mongo:latest
     environment:
       - MONGO_DATA_DIR=/data/db
@@ -13,7 +13,15 @@ services:
     volumes:
       - ./fixtures/data/db:/data/db
     command: mongod --logpath=/dev/null
-    ports:
-      - 27017:27017
+    networks:
+      - music
+
+  chart-crawler:
+    container_name: chart-crawler
+    image: chart-crawler:latest
+    depends_on: 
+      - chartdb
+    environment:
+      - CHART_DB_ADDRESS=chartdb
     networks:
       - music
