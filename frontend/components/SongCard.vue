@@ -28,7 +28,8 @@ export default {
     width: 50%;
     height: 120px;
     text-align: center;
-    margin: 5px
+    margin: 5px;
+    font-size: 2em;
 }
 
 #card.unselected {
