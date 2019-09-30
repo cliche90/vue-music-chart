@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 #card {
-    width: 50%;
+    width: calc(100% - 10px);
     height: 120px;
     text-align: center;
     margin: 5px;
