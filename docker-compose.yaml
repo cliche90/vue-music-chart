@@ -7,8 +7,6 @@ services:
   chartdb:
     container_name: chartdb
     image: mongo:latest
-    ports:
-      - 27017:27017
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
@@ -28,4 +26,17 @@ services:
     networks:
       - music
   
+  web-music-player:
+    container_name: web-music-player
+    image: web-music-player:latest
+    ports:
+      - 3000:3000
+    depends_on: 
+      - chartdb
+      - chart-crawler
+    environment:
+      - SERVICE_PORT=3000
+      - CHART_DB_ADDRESS=chartdb
+    networks:
+      - music
   

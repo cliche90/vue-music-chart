@@ -1,7 +1,6 @@
 const express = require('express');
-const port = 3000;
 const app = express();
 
 app.use('/songs', require('./src/router/songs'));
 
-app.listen(port, () => console.log(`listen on ${port} port`));
+app.listen(process.env.SERVICE_PORT, () => console.log(`listen on ${process.env.SERVICE_PORT} port`));

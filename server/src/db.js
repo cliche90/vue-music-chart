@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MelonSong = mongoose.model('MelonSong', require('../../crawler/schema/SongSchema'));
+const MelonSong = mongoose.model('MelonSong', require('../schema/SongSchema'));
 
 mongoose.connect(`mongodb://${process.env.CHART_DB_ADDRESS}/music`, {
     useNewUrlParser: true,
