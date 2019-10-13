@@ -6,5 +6,6 @@ cp -r $SCHEMA_DIR $(dirname "${BASH_SOURCE[0]}")
 
 cd $WEBSERVER_ROOT_DIR
 docker build -t web-music-player .
-rm -rf $(cd $(dirname "${BASH_SOURCE[0]}") && cd ./schema ; pwd -P )
+rm -rf "$WEBSERVER_ROOT_DIR/scripts/schema"
+
 
