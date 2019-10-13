@@ -36,7 +36,7 @@ export default {
             console.log("player state is changed");
         }
     },
-    mounted: function() {
+    mounted() {
         this.loadYoutubeScript();
         window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady;
     }

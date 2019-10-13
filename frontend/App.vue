@@ -1,6 +1,5 @@
 <template>
     <div>
-        <div>{{ name }}</div>
         <YoutubePlayer />
         <div v-for="song in songs" :key="song.rank">
             <SongCard :song="song" />
@@ -12,16 +11,27 @@
 import SongCard from "./components/SongCard.vue";
 import YoutubePlayer from "./components/YoutubePlayer.vue";
 
+import axios from 'axios';
+
 export default {
+    computed: {
+        async songs(chartName){
+            let songs = [];
+            switch(songs) {
+                case 'melon':
+                    songs = await axios.get('/songs/melon')
+                    break;
+                default:
+                    songs = await axios.get('/songs/melon')
+                    break;
+            }
+             
+            console.log(songs)
+            return songs;
+        }
+    },
     data() {
         return {
-            name: "vue music chart",
-            songs: [
-                { rank: 1, title: "hello1", singer: "adele1" },
-                { rank: 2, title: "hello2", singer: "adele2" },
-                { rank: 3, title: "hello3", singer: "adele3" },
-                { rank: 4, title: "hello4", singer: "adele4" }
-            ],
         };
     },
     components: {
@@ -31,5 +41,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+html, body {
+    margin: 0;
+}
 </style>

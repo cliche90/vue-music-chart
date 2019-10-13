@@ -25,10 +25,10 @@ export default {
 
 <style scoped>
 #card {
-    width: calc(100% - 10px);
+    width: 100%;
     height: 120px;
     text-align: center;
-    margin: 5px;
+    margin: 1px 0 1px 0;
     font-size: 2em;
 }
 
