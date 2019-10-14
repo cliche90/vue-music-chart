@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - 12.9.1
-befor_install:
-  - npm install
-branches:
-  only:
-    - master
