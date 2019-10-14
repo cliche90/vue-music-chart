@@ -10,6 +10,7 @@
 ## 초기화
 
 ```bash
+$ cd vue-music-chart
 $ lerna clean
 $ lerna bootstrap
 ```
