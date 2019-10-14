@@ -10,7 +10,7 @@
 ## 초기화
 
 ```bash
-$ cd vue-music-chart
+# workdir: project root
 $ lerna clean
 $ lerna bootstrap
 ```
@@ -20,7 +20,7 @@ $ lerna bootstrap
 > `vue-music-chart` 는 `mongo` 이미지와 `node:10`를 base 로 한 2개의 이미지를 빌드하여 사용합니다.
 
 ```bash
-$ cd vue-music-chart
+# workdir: project root
 $ npm run build-image
 ```
 
@@ -30,7 +30,7 @@ $ npm run build-image
 
 ## Docker Containers 실행
 ```bash
-$ cd vue-music-chart
+# workdir: project root
 $ docker-compose up -d
 ```
 
