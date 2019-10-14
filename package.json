@@ -1,16 +1,13 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "name": "root",
+  "private": true,
   "scripts": {
-    "build": "webpack --watch",
-    "dev": "webpack-dev-server --hot"
+    "test": "lerna run test",
+    "build-image": "lerna run build-image"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "css-loader": "^3.2.0",
+    "lerna": "^3.17.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-style-loader": "^4.1.2",
@@ -20,6 +17,8 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "axios": "^0.19.0"
+    "crawler": "file:packages/crawler",
+    "frontend": "file:packages/frontend",
+    "server": "file:packages/server"
   }
 }
